@@ -1,0 +1,27 @@
+{
+  "name": "investors-exchange.api",
+  "version": "0.0.0",
+  "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
+  "main": "index.js",
+  "author": "Arman Charan",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn run clean && yarn run bundle",
+    "bundle": "BABEL_ENV=production babel source --out-dir distribution --ignore **/*.test.js",
+    "clean": "yarn run remove:distribution && yarn run create:distribution",
+    "create:distribution": "mkdir distribution",
+    "remove:distribution": "rm -rf distribution",
+    "test": "yarn jest --runInBand"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.0-alpha.3cc09dcf",
+    "babel-preset-stage-3": "^6.24.1",
+    "jest": "^23.4.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

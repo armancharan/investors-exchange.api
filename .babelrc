@@ -1,0 +1,10 @@
+{
+  "comments": false,
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  },
+  "plugins": ["transform-class-properties"],
+  "presets": ["env", "stage-3"]
+}
