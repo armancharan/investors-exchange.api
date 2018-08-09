@@ -1,6 +1,6 @@
 {
   "name": "investors-exchange.api",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
   "main": "index.js",
   "author": "Arman Charan",
@@ -10,6 +10,7 @@
     "bundle": "BABEL_ENV=production babel source --out-dir distribution --ignore **/*.test.js",
     "clean": "yarn run remove:distribution && yarn run create:distribution",
     "create:distribution": "mkdir distribution",
+    "upload": "yarn run build && yarn publish",
     "remove:distribution": "rm -rf distribution",
     "test": "yarn jest --runInBand"
   },
