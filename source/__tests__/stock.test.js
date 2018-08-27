@@ -1,4 +1,3 @@
-
 // Dependencies.
 import stock from '../stock'
 
