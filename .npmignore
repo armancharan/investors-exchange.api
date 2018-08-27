@@ -1,4 +1,3 @@
-
 # Babel.
 .babelrc
 
@@ -13,6 +12,3 @@ jest.config.js
 
 # Source.
 source/
-
-# Yarn.
-yarn.lock
