@@ -10,5 +10,8 @@ config/
 # Jest.
 jest.config.js
 
+# README.
+README.md
+
 # Source.
 source/
