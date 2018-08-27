@@ -1,4 +1,3 @@
-
 // Dependencies.
 import {fetch, notAnObject} from '../lib'
 

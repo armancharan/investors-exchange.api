@@ -1,4 +1,3 @@
-
 // Dependencies.
 import reference from './reference'
 import stock from './stock'
