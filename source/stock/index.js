@@ -1,4 +1,3 @@
-
 // Dependencies.
 import {fetch, notAnObject} from '../lib'
 
@@ -8,7 +7,7 @@ class stock {
   // Constructor.
   constructor(...params) {
     const [symbol = 'market'] = params
-    this.symbol = symbol.toUpperCase()
+    this.symbol = symbol.toLowerCase()
     return this
   }
 
@@ -20,6 +19,9 @@ class stock {
 
   // Company.
   company = async () => await this.handle('company', '/company')
+
+  // Crypto.
+  crypto = async () => await this.handle('crypto', '/crypto')
 
   // Delayed Quote.
   delayed_quote = async percent => await this.quote({delayed: true, percent: percent})
@@ -36,10 +38,7 @@ class stock {
   // Handle.
   handle = async (name, route, params) => {
     const {path, symbol} = this
-    const data = await fetch(name, path(route), params)
-    console.log(name, route, typeof data)
-    if (notAnObject(data)) return {symbol, data}
-    return {symbol, ...data}
+    return await fetch(name, path(route), params)
   }
 
   // Historical Prices.
@@ -47,6 +46,9 @@ class stock {
 
   // Largest Trades.
   largest_trades = async () => await this.handle('largest_trades', '/largest-trades')
+
+  // List.
+  list = async category => await this.handle(`list:${category}`, `/list/${category}`)
 
   // Logo.
   logo = async () => await this.handle('logo', '/logo')
