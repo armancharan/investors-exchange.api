@@ -9,7 +9,6 @@ export const fetch = async (name, path, params) => {
   const parameters = params ? Object.entries(params) : ''
   const query = parameters ? parameters.reduce((query, [key, value], i) => `${query}${i > 0 ? '&' : ''}${key}=${value}`, '?') : ''
   const url = `${base}${path}${query}`
-  console.log(url)
   return (await axios.get(url)).data
 }
 
