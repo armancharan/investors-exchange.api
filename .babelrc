@@ -5,6 +5,6 @@
       "presets": ["minify"]
     }
   },
-  "plugins": ["transform-class-properties"],
+  "plugins": ["transform-class-properties", ["transform-runtime", {"polyfill": false,"regenerator": true}]],
   "presets": ["env", "stage-3"]
 }
