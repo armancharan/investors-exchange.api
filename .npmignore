@@ -4,6 +4,9 @@
 # Config.
 config/
 
+# DS Store.
+.DS_Store
+
 # Log Files.
 *.log
 
