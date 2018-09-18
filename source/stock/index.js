@@ -17,6 +17,9 @@ class stock {
   // Chart.
   chart = async (...range) => await this.handle(`/chart/${range ? range.join('/') : '1m'}`)
 
+  // Collection.
+  collection = async (type, collectionName) => await this.handle(`/collection/${type}`, {collectionName})
+
   // Company.
   company = this.handle('/company')
 
