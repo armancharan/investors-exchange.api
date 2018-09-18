@@ -36,13 +36,16 @@ class stock {
   effective_spread = this.handle('effective_spread', '/effective-spread')
 
   // Financials.
-  financials = this.handle('financials', '/financials')
+  financials = async ({period = 'quarter'}) => await this.handle('financials', path('/financials'), {period})
 
   // Handle.
   handle = async (name, route, params) => {
     const {path, symbol} = this
     return await fetch(name, path(route), params)
   }
+
+  // IPOS.
+  ipos = async (when = 'upcoming') => await this.handle('ipos', `/${when}-ipos`)
 
   // Historical Prices.
   historical = this.chart
@@ -87,6 +90,9 @@ class stock {
 
   // Relevant.
   relevant = this.handle('relevant', '/relevant')
+
+  // Sector Performance.
+  sector_performance = this.handle('sector_performance', '/sector-performance')
 
   // Short Interest.
   short_interest = async date => await this.handle('short_interest', `/short-interest/${date || ''}`)
