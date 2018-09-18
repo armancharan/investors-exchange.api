@@ -17,7 +17,7 @@ reference.dividends = async date => await fetch(path(`/daily-list/dividends${dat
 reference.next_day_ex_date = async date => await fetch(path(`/daily-list/next-day-ex-date${date ? `/${date}` : ''}`))
 
 // Symbols.
-reference.symbols = async ({format = 'json'}) => await fetch(path('/symbols'), {format})
+reference.symbols = async ({format} = {format: 'json'}) => await fetch(path('/symbols'), {format})
 
 // Symbol Directory.
 reference.symbol_directory = async date => await fetch(path(`/daily-list/symbol-directory${date ? `/${date}` : ''}`))
