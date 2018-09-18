@@ -12,58 +12,58 @@ class stock {
   }
 
   // Book.
-  book = this.handle('book', '/book')
+  book = this.handle('/book')
 
   // Chart.
-  chart = async (...range) => await this.handle('chart', `/chart/${range ? range.join('/') : '1m'}`)
+  chart = async (...range) => await this.handle(`/chart/${range ? range.join('/') : '1m'}`)
 
   // Company.
-  company = this.handle('company', '/company')
+  company = this.handle('/company')
 
   // Crypto.
-  crypto = this.handle('crypto', '/crypto')
+  crypto = this.handle('/crypto')
 
   // Delayed Quote.
-  delayed_quote = this.handle('delayed_quote', '/delayed_quote')
+  delayed_quote = this.handle('/delayed_quote')
 
   // Dividends.
-  dividends = async range => await this.handle('dividends', `/dividends/${range || '1m'}`)
+  dividends = async range => await this.handle(`/dividends/${range || '1m'}`)
 
   // Earnings.
-  earnings = this.handle('earnings', '/earnings')
+  earnings = this.handle('/earnings')
   
   // Effective Spread.
-  effective_spread = this.handle('effective_spread', '/effective-spread')
+  effective_spread = this.handle('/effective-spread')
 
   // Financials.
-  financials = async ({period = 'quarter'}) => await this.handle('financials', path('/financials'), {period})
+  financials = async ({period = 'quarter'}) => await this.handle(path('/financials'), {period})
 
   // Handle.
-  handle = async (name, route, params) => {
+  handle = async (route, params) => {
     const {path, symbol} = this
-    return await fetch(name, path(route), params)
+    return await fetch(path(route), params)
   }
 
   // IPOS.
-  ipos = async (when = 'upcoming') => await this.handle('ipos', `/${when}-ipos`)
+  ipos = async (when = 'upcoming') => await this.handle(`/${when}-ipos`)
 
   // Historical Prices.
   historical = this.chart
 
   // Largest Trades.
-  largest_trades = this.handle('largest_trades', '/largest-trades')
+  largest_trades = this.handle('/largest-trades')
 
   // List.
-  list = async category => await this.handle(`list:${category}`, `/list/${category}`)
+  list = async category => await this.handle(`/list/${category}`)
 
   // Logo.
-  logo = this.handle('logo', '/logo')
+  logo = this.handle('/logo')
 
   // News.
-  news = async range => await this.handle('news', `/news/last/${range || 1}`)
+  news = async range => await this.handle(`/news/last/${range || 1}`)
 
   // OHLC.
-  ohlc = this.handle('ohlc', '/ohlc')
+  ohlc = this.handle('/ohlc')
 
   // Open Close.
   openclose = this.ohlc
@@ -72,46 +72,46 @@ class stock {
   path = extension => `/stock/${this.symbol}${extension}`
 
   // Peers.
-  peers = this.handle('peers', '/peers')
+  peers = this.handle('/peers')
 
   // Price.
-  price = this.handle('price', '/price')
+  price = this.handle('/price')
 
   // Previous.
-  previous = this.handle('previous', '/previous')
+  previous = this.handle('/previous')
 
   // Quote.
-  quote = async ({displayPercent} = {}) => await this.handle('quote', '/quote', {displayPercent})
+  quote = async ({displayPercent} = {}) => await this.handle('/quote', {displayPercent})
 
   // Relevant.
-  relevant = this.handle('relevant', '/relevant')
+  relevant = this.handle('/relevant')
 
   // Sector Performance.
-  sector_performance = this.handle('sector_performance', '/sector-performance')
+  sector_performance = this.handle('/sector-performance')
 
   // Short Interest.
-  short_interest = async date => await this.handle('short_interest', `/short-interest/${date || ''}`)
+  short_interest = async date => await this.handle(`/short-interest/${date || ''}`)
 
   // Splits.
-  splits = async range => await this.handle('splits', `/splits/${range || '1m'}`)
+  splits = async range => await this.handle(`/splits/${range || '1m'}`)
 
   // Effective Spread.
-  spread = this.handle('spread', '/effective-spread')
+  spread = this.handle('/effective-spread')
 
   // Key Statistics.
-  stats = this.handle('stats', '/stats')
+  stats = this.handle('/stats')
 
   // Regulation SHO Threshold Securities.
-  threshold_securities = async date => await this.handle('threshold_securities', `/threshold-securities/${date || ''}`)
+  threshold_securities = async date => await this.handle(`/threshold-securities/${date || ''}`)
 
   // Time Series.
   time_series = this.chart
 
   // Today Earnings.
-  today_earnings = this.handle('today_earnings', '/today-earnings')
+  today_earnings = this.handle('/today-earnings')
 
   // Volume By Venue.
-  volume_by_venue = this.handle('volume_by_venue', '/volume-by-venue')
+  volume_by_venue = this.handle('/volume-by-venue')
 
 }
 

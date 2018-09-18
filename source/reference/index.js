@@ -8,19 +8,19 @@ const path = extension => `/ref-data${extension}`
 const reference = {}
 
 // Corporate Actions.
-reference.corporate_actions = async date => await fetch('corporate_actions', path(`/daily-list/corporate-actions${date ? `/${date}` : ''}`))
+reference.corporate_actions = async date => await fetch(path(`/daily-list/corporate-actions${date ? `/${date}` : ''}`))
 
 // Dividends.
-reference.dividends = async date => await fetch('dividends', path(`/daily-list/dividends${date ? `/${date}` : ''}`))
+reference.dividends = async date => await fetch(path(`/daily-list/dividends${date ? `/${date}` : ''}`))
 
 // Next Day Ex Date.
-reference.next_day_ex_date = async date => await fetch('next_day_ex_date', path(`/daily-list/next-day-ex-date${date ? `/${date}` : ''}`))
+reference.next_day_ex_date = async date => await fetch(path(`/daily-list/next-day-ex-date${date ? `/${date}` : ''}`))
 
 // Symbols.
-reference.symbols = async ({format = 'json'}) => await fetch('symbols', path('/symbols'), {format})
+reference.symbols = async ({format = 'json'}) => await fetch(path('/symbols'), {format})
 
 // Symbol Directory.
-reference.symbol_directory = async date => await fetch('symbol_directory', path(`/daily-list/symbol-directory${date ? `/${date}` : ''}`))
+reference.symbol_directory = async date => await fetch(path(`/daily-list/symbol-directory${date ? `/${date}` : ''}`))
 
 // Export.
 export default reference

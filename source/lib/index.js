@@ -5,7 +5,7 @@ import axios from 'axios'
 const base = 'https://api.iextrading.com/1.0'
 
 // Fetch.
-export const fetch = async (name, path, params) => {
+export const fetch = async (path, params) => {
   const parameters = params ? Object.entries(params) : ''
   const query = parameters ? parameters.reduce((query, [key, value], i) => `${query}${i > 0 ? '&' : ''}${key}=${value}`, '?') : ''
   const url = `${base}${path}${query}`
