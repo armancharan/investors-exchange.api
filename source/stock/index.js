@@ -81,12 +81,7 @@ class stock {
   previous = this.handle('previous', '/previous')
 
   // Quote.
-  quote = async ({delayed, percent} = {}) => {
-    const {handle} = this
-    const params = percent && {displayPercent: true}
-    if (delayed) return await handle('delayed_quote', '/delayed-quote', params)
-    else return await handle('quote', '/quote', params)
-  }
+  quote = async ({displayPercent} = {}) => await this.handle('quote', '/quote', {displayPercent})
 
   // Relevant.
   relevant = this.handle('relevant', '/relevant')
