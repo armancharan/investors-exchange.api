@@ -12,7 +12,7 @@ class stock {
   }
 
   // Book.
-  book = this.handle('/book')
+  book = async () => await this.handle('/book')
 
   // Chart.
   chart = async (...range) => await this.handle(`/chart/${range ? range.join('/') : '1m'}`)
@@ -21,25 +21,25 @@ class stock {
   collection = async (type, collectionName) => await this.handle(`/collection/${type}`, {collectionName})
 
   // Company.
-  company = this.handle('/company')
+  company = async () => await this.handle('/company')
 
   // Crypto.
-  crypto = this.handle('/crypto')
+  crypto = async () => await this.handle('/crypto')
 
   // Delayed Quote.
-  delayed_quote = this.handle('/delayed_quote')
+  delayed_quote = async () => await this.handle('/delayed_quote')
 
   // Dividends.
   dividends = async range => await this.handle(`/dividends/${range || '1m'}`)
 
   // Earnings.
-  earnings = this.handle('/earnings')
+  earnings = async () => await this.handle('/earnings')
   
   // Effective Spread.
-  effective_spread = this.handle('/effective-spread')
+  effective_spread = async () => await this.handle('/effective-spread')
 
   // Financials.
-  financials = async ({period = 'quarter'}) => await this.handle(path('/financials'), {period})
+  financials = async ({period} = {period: 'quarter'}) => await this.handle(path('/financials'), {period})
 
   // Handle.
   handle = async (route, params) => {
@@ -54,19 +54,19 @@ class stock {
   historical = this.chart
 
   // Largest Trades.
-  largest_trades = this.handle('/largest-trades')
+  largest_trades = async () => await this.handle('/largest-trades')
 
   // List.
   list = async category => await this.handle(`/list/${category}`)
 
   // Logo.
-  logo = this.handle('/logo')
+  logo = async () => await this.handle('/logo')
 
   // News.
   news = async range => await this.handle(`/news/last/${range || 1}`)
 
   // OHLC.
-  ohlc = this.handle('/ohlc')
+  ohlc = async () => await this.handle('/ohlc')
 
   // Open Close.
   openclose = this.ohlc
@@ -75,22 +75,22 @@ class stock {
   path = extension => `/stock/${this.symbol}${extension}`
 
   // Peers.
-  peers = this.handle('/peers')
+  peers = async () => await this.handle('/peers')
 
   // Price.
-  price = this.handle('/price')
+  price = async () => await this.handle('/price')
 
   // Previous.
-  previous = this.handle('/previous')
+  previous = async () => await this.handle('/previous')
 
   // Quote.
   quote = async ({displayPercent} = {}) => await this.handle('/quote', {displayPercent})
 
   // Relevant.
-  relevant = this.handle('/relevant')
+  relevant = async () => await this.handle('/relevant')
 
   // Sector Performance.
-  sector_performance = this.handle('/sector-performance')
+  sector_performance = async () => await this.handle('/sector-performance')
 
   // Short Interest.
   short_interest = async date => await this.handle(`/short-interest/${date || ''}`)
@@ -99,10 +99,10 @@ class stock {
   splits = async range => await this.handle(`/splits/${range || '1m'}`)
 
   // Effective Spread.
-  spread = this.handle('/effective-spread')
+  spread = async () => await this.handle('/effective-spread')
 
   // Key Statistics.
-  stats = this.handle('/stats')
+  stats = async () => await this.handle('/stats')
 
   // Regulation SHO Threshold Securities.
   threshold_securities = async date => await this.handle(`/threshold-securities/${date || ''}`)
@@ -111,10 +111,10 @@ class stock {
   time_series = this.chart
 
   // Today Earnings.
-  today_earnings = this.handle('/today-earnings')
+  today_earnings = async () => await this.handle('/today-earnings')
 
   // Volume By Venue.
-  volume_by_venue = this.handle('/volume-by-venue')
+  volume_by_venue = async () => await this.handle('/volume-by-venue')
 
 }
 
