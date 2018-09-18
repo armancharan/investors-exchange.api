@@ -24,13 +24,16 @@ class stock {
   crypto = this.handle('crypto', '/crypto')
 
   // Delayed Quote.
-  delayed_quote = async percent => await this.quote({delayed: true, percent: percent})
+  delayed_quote = this.handle('delayed_quote', '/delayed_quote')
 
   // Dividends.
   dividends = async range => await this.handle('dividends', `/dividends/${range || '1m'}`)
 
   // Earnings.
   earnings = this.handle('earnings', '/earnings')
+  
+  // Effective Spread.
+  effective_spread = this.handle('effective_spread', '/effective-spread')
 
   // Financials.
   financials = this.handle('financials', '/financials')
@@ -102,6 +105,9 @@ class stock {
 
   // Time Series.
   time_series = this.chart
+
+  // Today Earnings.
+  today_earnings = this.handle('today_earnings', '/today-earnings')
 
   // Volume By Venue.
   volume_by_venue = this.handle('volume_by_venue', '/volume-by-venue')
