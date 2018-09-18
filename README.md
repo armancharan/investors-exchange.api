@@ -1,4 +1,10 @@
+# 📈
+
+# Investors Exchange API Documentation
+
 An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrading.com](https://iextrading.com/)
+
+---
 
 ## Installation
 
@@ -8,9 +14,24 @@ An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrad
     # YARN
     yarn add investors-exchange.api
 
+---
+
 ## Getting Started
 
     import IEX from 'investors-exchange.api'
+
+---
+
+## Miscellaneous Queries
+
+**Fetch**
+
+    // https://iextrading.com/developer/docs/#financials
+    const endpoint = '/stock/snap/financials'
+    const params = {period: 'annual'}
+    const data = IEX.fetch(endpoint, params)
+
+---
 
 ## Stock Queries
 
@@ -129,11 +150,19 @@ An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrad
 
     const volume_by_venue = await AAPL.volume_by_venue()
 
+---
+
 ## Market Queries
 
 **[Market](https://iextrading.com/developer/docs/#iex-market-data)**
 
     const market = IEX.market || IEX.stock()
+
+**[Collections](https://iextrading.com/developer/docs/#collections)**
+
+    const collections = {}
+    collections.computer_hardware = await market.collection('tag', 'Computer%20Hardware')
+    collections.health_care = await market.collection('sector', 'Health%20Care')
 
 **[Crypto](https://iextrading.com/developer/docs/#crypto)**
 
@@ -170,6 +199,8 @@ An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrad
     const threshold_securities = {}
     threshold_securities.recent = await market.threshold_securities()
     threshold_securities.specific = await market.threshold_securities('20171210')
+
+---
 
 ## Reference Queries
 
