@@ -1,10 +1,14 @@
 {
   "name": "investors-exchange.api",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
   "main": "index.js",
   "author": "Arman Charan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/armancharan/investors-exchange.api"
+  },
   "scripts": {
     "build": "yarn run clean && yarn run bundle",
     "bundle": "BABEL_ENV=production babel source --out-dir distribution --ignore **/*.test.js",
