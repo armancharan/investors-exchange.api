@@ -1,10 +1,7 @@
-# 📈
-
-# Investors Exchange API Documentation
+# Investors-Exchange.API
 
 An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrading.com](https://iextrading.com/)
 
----
 
 ## Installation
 
@@ -13,14 +10,12 @@ An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrad
     
     # YARN
     yarn add investors-exchange.api
-
----
+    
 
 ## Getting Started
 
     import IEX from 'investors-exchange.api'
 
----
 
 ## Miscellaneous Queries
 
@@ -31,7 +26,6 @@ An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrad
     const params = {period: 'annual'}
     const data = IEX.fetch(endpoint, params)
 
----
 
 ## Stock Queries
 
@@ -150,7 +144,6 @@ An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrad
 
     const volume_by_venue = await AAPL.volume_by_venue()
 
----
 
 ## Market Queries
 
@@ -200,7 +193,6 @@ An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrad
     threshold_securities.recent = await market.threshold_securities()
     threshold_securities.specific = await market.threshold_securities('20171210')
 
----
 
 ## Reference Queries
 
