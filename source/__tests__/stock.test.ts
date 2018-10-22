@@ -1,10 +1,16 @@
 // Dependencies.
 import IEX from '../index'
 
+// Globals.
+const AAPL = IEX.stock('AAPL')
+
 // Stock.
 describe('STOCK', () => {
-  const AAPL = IEX.stock('AAPL')
-  test('Book', async () => await AAPL.book())
+  test('Book', async () => {
+    const {quote} = await AAPL.book()
+    expect(quote.symbol).toBe('AAPL')
+    expect(quote.companyName).toBe('Apple Inc.')
+  })
   test('Chart - Dynamic', async () => await AAPL.chart('dynamic'))
   test('Chart - Dated', async () => AAPL.chart('date/20180713'))
   test('Company', async () => await AAPL.company())
