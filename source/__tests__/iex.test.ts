@@ -8,5 +8,5 @@ describe('IEX', () => {
   it('Exists', () => expect(IEX).toBeTruthy())
   test('Market', () => expect(IEX.market).toBeTruthy())
   test('Reference', () => expect(IEX.reference).toBeTruthy())
-  test('Stock', () => expect(IEX.stock()).toBeTruthy())
+  test('Stock', () => expect(IEX.stock('SNAP')).toBeTruthy())
 })
