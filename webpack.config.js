@@ -1,31 +1,21 @@
 const path = require('path')
 const webpack = require('webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    'investors-exchange.api': './source/index.ts',
-    'investors-exchange.api.min': './source/index.ts'
+    'index': './source/index.ts'
   },
   output: {
     path: path.resolve(__dirname, 'distribution'),
     filename: '[name].js',
     libraryTarget: 'umd',
-    library: 'MyLib',
+    library: 'investors-exchange.api',
     umdNamedDefine: true
   },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js']
-  },
-  devtool: 'source-map',
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({sourceMap: true, include: /\.min\.js$/})
-    ]
-  },
+  plugins: [new CleanWebpackPlugin('distribution')],
+  resolve: {extensions: ['.ts', '.tsx', '.js']},
   module: {
-    rules: [
-      {test: /\.tsx?$/, loader: 'awesome-typescript-loader', exclude: /node_modules/, query: {declaration: false}}
-    ]
+    rules: [{test: /\.tsx?$/, loader: 'awesome-typescript-loader', exclude: /node_modules/, query: {declaration: true}}]
   }
 }
