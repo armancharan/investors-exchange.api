@@ -1,5 +1,4 @@
-// Config.
-const config = {
+module.exports = {
   testURL: 'http://localhost',
   verbose: true,
   roots: ['./source'],
@@ -7,6 +6,3 @@ const config = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'node', 'json']
 }
-
-// Export.
-module.exports = config
