@@ -1,9 +1,9 @@
 // Dependencies.
-import stock from '../stock'
+import IEX from '../index'
 
 // Market.
 describe('MARKET', () => {
-  const market = stock()
+  const market = IEX.market
   test('Crypto', async () => await market.crypto())
   test('Gainers', async () => await market.list('gainers'))
   test('Previous', async () => await market.previous())

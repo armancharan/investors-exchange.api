@@ -1,12 +1,12 @@
 // Dependencies.
-import stock from '../stock'
+import IEX from '../index'
 
 // Stock.
 describe('STOCK', () => {
-  const AAPL = stock('AAPL')
+  const AAPL = IEX.stock('AAPL')
   test('Book', async () => await AAPL.book())
   test('Chart - Dynamic', async () => await AAPL.chart('dynamic'))
-  test('Chart - Dated', async () => AAPL.chart('date', '20180713'))
+  test('Chart - Dated', async () => AAPL.chart('date/20180713'))
   test('Company', async () => await AAPL.company())
   test('Dividends', async () => await AAPL.dividends('5y'))
   test('Earnings', async () => await AAPL.earnings())
@@ -26,6 +26,6 @@ describe('STOCK', () => {
   test('Volume By Venue', async () => await AAPL.volume_by_venue())
   test('Spread', async () => await AAPL.spread())
   test('Stats', async () => await AAPL.stats())
-  test('Quote - Percent', async () => await AAPL.quote({percent: true}))
-  test('Quote - Delayed', async () => await AAPL.quote({delayed: true}))
+  test('Quote - Percent', async () => await AAPL.quote(true))
+  test('Quote - Delayed', async () => await AAPL.delayed_quote())
 })

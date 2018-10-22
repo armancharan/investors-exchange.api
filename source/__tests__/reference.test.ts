@@ -1,5 +1,6 @@
 // Dependencies.
-import reference from '../reference'
+import IEX from '../index'
+const {reference} = IEX
 
 // Reference.
 describe('REFERENCE', () => {
