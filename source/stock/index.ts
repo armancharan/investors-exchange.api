@@ -39,7 +39,7 @@ class stock {
   effective_spread = async (): Promise<EffectiveSpread[]> => await this.handle('/effective-spread')
 
   // Financials.
-  financials = async ({period = 'quarter'}: {period: 'annual' | 'quarter'}): Promise<Financials> => await this.handle(this.path('/financials'), {period})
+  financials = async (options?: {period: 'annual' | 'quarter'}): Promise<Financials> => await this.handle(this.path('/financials'), options)
 
   // Handle.
   handle = async (route: string, params?: object) => {
@@ -84,7 +84,7 @@ class stock {
   previous = async (): Promise<PriceData> => await this.handle('/previous')
 
   // Quote.
-  quote = async ({displayPercent = false}: {displayPercent?: boolean}): Promise<Quote> => await this.handle('/quote', {displayPercent})
+  quote = async (options?: {displayPercent?: boolean}): Promise<Quote> => await this.handle('/quote', options)
 
   // Relevant.
   relevant = async (): Promise<Relevant> => await this.handle('/relevant')

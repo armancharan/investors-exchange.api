@@ -32,6 +32,6 @@ describe('STOCK', () => {
   test('Volume By Venue', async () => await AAPL.volume_by_venue())
   test('Spread', async () => await AAPL.spread())
   test('Stats', async () => await AAPL.stats())
-  test('Quote - Percent', async () => await AAPL.quote(true))
+  test('Quote - Percent', async () => await AAPL.quote({displayPercent: true}))
   test('Quote - Delayed', async () => await AAPL.delayed_quote())
 })
