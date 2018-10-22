@@ -10,12 +10,8 @@
     "url": "https://github.com/armancharan/investors-exchange.api"
   },
   "scripts": {
-    "build": "yarn run clean && yarn run bundle",
-    "bundle": "BABEL_ENV=production babel source --out-dir distribution --ignore **/*.test.js",
-    "clean": "yarn run remove:distribution && yarn run create:distribution",
-    "create:distribution": "mkdir distribution",
+    "build": "webpack",
     "upload": "yarn run build && yarn publish",
-    "remove:distribution": "rm -rf distribution",
     "test": "yarn jest --runInBand"
   },
   "devDependencies": {
@@ -27,12 +23,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.5.0-alpha.3cc09dcf",
     "babel-preset-stage-3": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "jest": "^23.6.0",
     "path": "^0.12.7",
     "ts-jest": "^23.10.4",
     "typescript": "^3.1.3",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.21.0"
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2"
   },
   "dependencies": {
     "axios": "^0.18.0"
