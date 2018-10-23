@@ -2,6 +2,8 @@
 
 An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrading.com](https://iextrading.com/)
 
+Supports TypeScript.
+
 
 ## Installation
 
