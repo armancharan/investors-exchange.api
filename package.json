@@ -1,6 +1,6 @@
 {
   "name": "investors-exchange.api",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
