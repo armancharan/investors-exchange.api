@@ -1,8 +1,8 @@
 {
   "name": "investors-exchange.api",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
-  "main": "./distribution/main.js",
+  "main": "./index.js",
   "types": "./distribution/index.d.ts",
   "author": "Arman Charan",
   "license": "MIT",
