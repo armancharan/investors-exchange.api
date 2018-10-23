@@ -16,7 +16,8 @@ Supports TypeScript.
 
 ## Getting Started
 
-    import IEX from 'investors-exchange.api'
+    import * as IEX from 'investors-exchange.api'
+    
 
 
 ## Miscellaneous Queries
