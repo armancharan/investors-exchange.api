@@ -1,6 +1,6 @@
 {
   "name": "investors-exchange.api",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,5 +36,13 @@
   "dependencies": {
     "axios": "^0.18.0",
     "ts-loader": "^5.2.2"
-  }
+  },
+  "keywords": [
+    "stock",
+    "market",
+    "api",
+    "investors",
+    "exchange",
+    "finance"
+  ]
 }
