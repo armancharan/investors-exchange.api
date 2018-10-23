@@ -1,17 +1,19 @@
 {
   "name": "investors-exchange.api",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
-  "main": "./index.js",
-  "types": "./distribution/index.d.ts",
-  "author": "Arman Charan",
+  "main": "distribution/index.js",
+  "types": "distribution/types/index.d.ts",
+  "author": "Arman Charan <armancharan@armancharan.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/armancharan/investors-exchange.api"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "yarn run clean && yarn run make",
+    "clean": "rm -rf dist",
+    "make": "tsc",
     "upload": "yarn run build && yarn publish",
     "test": "yarn jest --runInBand"
   },
