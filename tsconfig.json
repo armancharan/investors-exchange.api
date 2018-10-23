@@ -63,5 +63,5 @@
   "include": [
     "./source/**/*"
   ],
-  "exclude": ["node_modules", "**/*.spec.ts", "__tests__"]
+  "exclude": ["node_modules", "**/*.spec.ts", "source/__tests__"]
 }
