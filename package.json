@@ -3,7 +3,7 @@
   "version": "0.1.9",
   "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
   "main": "distribution/index.js",
-  "types": "distribution/types/index.d.ts",
+  "types": "distribution/index.d.ts",
   "author": "Arman Charan <armancharan@armancharan.com>",
   "license": "MIT",
   "repository": {
