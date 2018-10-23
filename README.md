@@ -1,8 +1,6 @@
 # Investors-Exchange.API
 
-An unaffiliated JavaScript API for the IEX Developer Platform - [https://iextrading.com](https://iextrading.com/)
-
-Supports TypeScript.
+An unaffiliated JavaScript / TypeScript API for the IEX Developer Platform - [https://iextrading.com](https://iextrading.com/)
 
 
 ## Installation
