@@ -59,7 +59,7 @@ yarn-error.log
 .env
 
 # Distribution.
-distribution/
+dist/
 
 # DS Store.
 .DS_Store
