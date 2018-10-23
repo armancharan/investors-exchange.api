@@ -4,6 +4,9 @@
 # Config.
 config/
 
+# Contributing.
+CONTRIBUTING.md
+
 # DS Store.
 .DS_Store
 
@@ -18,6 +21,13 @@ README.md
 
 # Source.
 source/
+
+# TypeScript.
+tsconfig.json
+tslint.json
+
+# Webpack.
+webpack.config.js
 
 # Yarn.
 yarn-error.log
