@@ -1,26 +1,9 @@
 // Dependencies.
 import {fetch} from './lib'
-import reference from './reference'
-import stock from './stock'
-const s = (symbol?: string) => new stock(symbol)
-const m = s('market')
-
-// IEX.
-class IEX {
-
-  // Fetch.
-  static fetch = fetch
-
-  // Market.
-  static market = m
-
-  // Reference.
-  static reference = reference
-
-  // Stock.
-  static stock = s
-
-}
+import {reference} from './reference'
+import {stock as s} from './stock'
+const stock = (symbol?: string) => new s(symbol)
+const market = stock('market')
 
 // Export.
-export default IEX
+export {fetch, market, reference, stock}

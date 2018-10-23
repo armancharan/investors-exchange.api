@@ -3,7 +3,7 @@ import {fetch} from '../lib'
 import {Article, Book, Chart, Collection, Company, DelayedQuote, Dividend, Earnings, EffectiveSpread, Financials, IPOData, List, Logo, OHLC, Peers, Performance, Price, PriceData, Quote, Range, Relevant, ShortInterest, Split, Stats, ThresholdSecurity, Trade, VenueVolume} from '../lib/types'
 
 // Stock.
-class stock {
+export class stock {
 
   // Constructor.
   constructor(symbol?: string) {
@@ -119,6 +119,3 @@ class stock {
   volume_by_venue = async (): Promise<VenueVolume[]> => await this.handle('/volume-by-venue')
 
 }
-
-// Export.
-export default stock

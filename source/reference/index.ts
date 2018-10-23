@@ -7,7 +7,7 @@ const path = (extension: string) => `/ref-data${extension}`
 type Format = 'json' | 'csv' | undefined
 
 // Reference.
-const reference = {
+export const reference = {
 
   // Corporate Actions.
   corporate_actions: async (date?: string): Promise<CorporateAction[]> => await fetch(path(`/daily-list/corporate-actions${date ? `/${date}` : ''}`)),
@@ -25,6 +25,3 @@ const reference = {
   symbol_directory: async (date?: string): Promise<IEXListedSecurity[]> => await fetch(path(`/daily-list/symbol-directory${date ? `/${date}` : ''}`))
 
 }
-
-// Export.
-export default reference
