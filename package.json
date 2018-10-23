@@ -1,8 +1,9 @@
 {
   "name": "investors-exchange.api",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Unofficial Browser / NodeJS API for https://iextrading.com",
-  "main": "index.js",
+  "main": "./distribution/main.js",
+  "types": "./distribution/index.d.ts",
   "author": "Arman Charan",
   "license": "MIT",
   "repository": {
@@ -16,7 +17,6 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.5",
-    "awesome-typescript-loader": "^5.2.1",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -32,6 +32,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "ts-loader": "^5.2.2"
   }
 }
